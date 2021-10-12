@@ -1,0 +1,84 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "hdvideoplayerallformat.gallery.videoplayer"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        ndk {
+            abiFilters "armeabi","armeabi-v7a","arm64-v8a","x86","x86_64"
+        }
+        resConfig "en"
+        setProperty("archivesBaseName", "MX Video-$versionName")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    buildTypes {
+        build {
+            minifyEnabled false
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        pickFirst '**/*.so'
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+//    implementation 'com.google.android.material:material:1.3.0'
+
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'pub.devrel:easypermissions:0.3.0'
+
+    implementation project(':giraffeplayer2')
+    implementation 'com.github.addisonelliott:SegmentedButton:3.1.9'
+    implementation 'commons-io:commons-io:2.10.0'
+    implementation "com.airbnb.android:lottie:3.0.5"
+
+    implementation 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.7.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.github.HamedTaherpour:floating-layout-android:1.1.5'
+    implementation 'com.github.GrenderG:Toasty:1.5.0'
+
+
+}

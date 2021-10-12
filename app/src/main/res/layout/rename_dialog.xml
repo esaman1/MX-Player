@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_15sdp">
+
+        <LinearLayout
+            android:id="@+id/anim"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@android:color/transparent">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimationView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/writing" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/anim"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Rename"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13sdp" />
+
+        <TextView
+            android:id="@+id/mTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textColor="@color/Grey_800"
+            android:textSize="@dimen/_12sdp" />
+
+        <EditText
+            android:id="@+id/mEditText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_below="@id/mTitle"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/edittextbox"
+            android:fontFamily="@font/montserrat"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="@dimen/_12sdp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mEditText"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp">
+
+            <TextView
+                android:id="@+id/mCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_25sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_toLeftOf="@id/mDone"
+                android:fontFamily="@font/montserrat"
+                android:text="Cancel"
+                android:textColor="@color/Grey_600"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/mDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:fontFamily="@font/montserrat"
+                android:text="Done"
+                android:textColor="@color/selected_blue"
+                android:textSize="@dimen/_12sdp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

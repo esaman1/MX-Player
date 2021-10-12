@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/mThumbnail"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_5sdp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:shapeAppearance="@style/RecentViewList" />
+
+    <TextView
+        android:id="@+id/mVideoTitle"
+        android:layout_width="@dimen/_130sdp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mThumbnail"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:fontFamily="@font/montserrat"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:singleLine="true"
+        android:text="Sample name"
+        android:textColor="@color/white" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/mThumbnail"
+        android:layout_alignBottom="@id/mThumbnail"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/transparent_black_percent_70"
+        app:cardCornerRadius="@dimen/_3sdp"
+        app:cardElevation="0dp">
+
+        <TextView
+            android:id="@+id/mVideoDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:maxLines="1"
+            android:paddingHorizontal="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="00:00"
+            android:textColor="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

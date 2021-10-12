@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".Fragment.FolderFragment">
+
+                <RelativeLayout
+                    android:id="@+id/mFolderRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mRecentRL">
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Folders"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mVideoRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/text2"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:nestedScrollingEnabled="false"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:listitem="@layout/folder_all_list" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mRecentRL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="Recent play"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp" />
+
+                    <ImageView
+                        android:id="@+id/mDeleteAll"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/_12sdp"
+                        android:src="@drawable/ic_delete" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mRecentRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text1"
+                        android:layout_marginHorizontal="@dimen/_10sdp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/recent_grid" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/mBottomRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_option"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="0dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="@dimen/_10sdp"
+                app:cardBackgroundColor="#EEF2F8"
+                app:elevation="0dp" />
+
+            <TextView
+                android:id="@+id/mTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/montserrat"
+                android:gravity="center_horizontal"
+                android:text="@string/app_name"
+                android:textColor="@color/Grey_800"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTitle"
+                android:layout_marginHorizontal="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:drawableLeft="@drawable/ic_audio"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Play as audio"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/mRename"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:drawableLeft="@drawable/ic_rename"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Rename"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/mDuplicate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:drawableLeft="@drawable/ic_duplicate"
+                    android:drawablePadding="@dimen/_17sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Duplicate Files"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/mDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:drawableLeft="@drawable/ic_delete"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Delete"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:id="@+id/mProperties"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_8sdp"
+                    android:drawableLeft="@drawable/ic_information"
+                    android:drawablePadding="@dimen/_20sdp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="Properties"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

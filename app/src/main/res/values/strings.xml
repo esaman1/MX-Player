@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Video Player</string>
+    <string name="Video">Video</string>
+    <string name="Folder">Folder</string>
+    <string name="History">History</string>
+    <string name="Setting">Setting</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="storage_msg">Need Reading Storage Permission for Files.</string>
+</resources>

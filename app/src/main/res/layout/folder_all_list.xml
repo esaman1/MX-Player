@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootRL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/mThumbnail"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:padding="@dimen/_4sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/folder" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toLeftOf="@id/mMore"
+                android:layout_toRightOf="@id/mThumbnail">
+
+                <TextView
+                    android:id="@+id/mVideoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Sample text"
+                    android:textColor="@color/black" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mVideoTitle"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/text_bg"
+                    app:cardCornerRadius="@dimen/_3sdp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:id="@+id/mVideoTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        android:layout_marginVertical="@dimen/_2sdp"
+                        android:fontFamily="@font/montserrat"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="0 Video"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/mMore"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:src="@drawable/grid_more" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,2 @@
+include ':app',':giraffeplayer2'
+rootProject.name = "Video Player"
